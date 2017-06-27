@@ -7,13 +7,13 @@ public class Aluno {
 	
 	
 	public Aluno(String nome, String matricula, String curso)throws Exception{
-		if(nome.trim().equalsIgnoreCase("") || nome == null){
+		if(nome == null || nome.trim().equalsIgnoreCase("")){
 			throw new Exception("nome nao pode ser nulo ou vazio");
 		}
-		if(matricula.trim().equalsIgnoreCase("") || matricula == null){
+		if(matricula == null || matricula.trim().equalsIgnoreCase("")){
 			throw new Exception("matricula nao pode ser nulo ou vazio");
 		}
-		if(curso.trim().equalsIgnoreCase("") || curso == null){
+		if(curso == null || curso.trim().equalsIgnoreCase("")){
 			throw new Exception("curso nao pode ser nulo ou vazio");
 		}
 		this.nome = nome;

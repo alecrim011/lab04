@@ -7,7 +7,10 @@ public class Grupo {
 	private String nome;
 	private Set<Aluno>alunos;
 	
-	public Grupo(String nome){
+	public Grupo(String nome)throws Exception{
+		if(nome == null || nome.trim().equals("")){
+			throw new Exception("nome nao pode ser nulo ou vazio");
+		}
 		this.nome =  nome;
 		alunos = new HashSet<>();
 	}
