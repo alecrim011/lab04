@@ -8,7 +8,13 @@ public class Cenario {
 	private String estado;
 	private ArrayList<Aposta> apostas;
 	
-	public Cenario(int numeracao, String descricao){
+	public Cenario(int numeracao, String descricao)throws Exception{
+		if(descricao == null || descricao.trim().equalsIgnoreCase("")){
+			throw new Exception("descricao nao pode ser nulo ou vazia");
+		}
+		if(numeracao <= 0){
+			throw new Exception("numeracao nao pode ser um valor menor ou igual a zero");
+		}
 		this.descricao = descricao;
 		this.numeracao = numeracao;
 		this.estado = "não finalizado";
@@ -16,8 +22,8 @@ public class Cenario {
 	
 	}
 	
-	public void cadastrasAposta(Aposta aposta){
-		apostas.add(aposta);
+	public boolean cadastrasAposta(Aposta aposta){
+		return apostas.add(aposta);
 	}
 	
 	public int totalDeApostas(){

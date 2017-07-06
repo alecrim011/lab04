@@ -10,7 +10,7 @@ private ArrayList<Cenario> cenarios;
 		cenarios = new ArrayList<>();
 	}
 	
-	public int cadastrasCenario(String descricao){
+	public int cadastrasCenario(String descricao) throws Exception{
 		int numeracao = cenarios.size() + 1;
 		Cenario cenario = new Cenario(numeracao, descricao);
 		cenarios.add(cenario);
@@ -43,7 +43,7 @@ private ArrayList<Cenario> cenarios;
 		return listaCenarios;
 	}
 	
-	public void cadastraAposta(int numeracao, String apostador, int valor, String previsao){
+	public void cadastraAposta(int numeracao, String apostador, int valor, String previsao) throws Exception{
 		Aposta aposta = new Aposta(apostador, valor, previsao);
 		Cenario cenario = buscaCenario(numeracao);
 		cenario.cadastrasAposta(aposta);
